@@ -15,7 +15,7 @@
 
 Hyper_Config = {
      ['globals'] = {
-          ['acess:token'] = 'APP_USR-2231287182541189-041022-e9b57fd78c0140a0545d8af41d575d80-459271420'; -- https://www.mercadopago.com.br/developers/panel/app
+          ['acess:token'] = 'APP_USR-'; -- https://www.mercadopago.com.br/developers/panel/app
           ['e-mail'] = '@gmail.com', -- Coloque aqui um email valido.
           ['teste:api'] = {
                ['command'] = 'testeapi';
