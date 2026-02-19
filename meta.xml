@@ -1,0 +1,30 @@
+<meta>
+
+     <oop>true</oop>
+
+     <info author = '!𝓝𝓮𝓽𝓸𝕺𝖓' version = '3.0' name = 'Sistema de API - MTA' description = 'www.hyperscripts.com.br' />
+
+     <script src = 'Hyper_G.lua' type = 'shared' cache = 'false' />
+     <script src = 'nui/source/tunnel.lua' type = 'shared' cache = 'false'/>
+     <script src = 'nui/source/Hyper_U.lua' type = 'client' cache = 'false'/> 
+     <script src = 'nui/source/Hyper_C.lua' type = 'client' cache = 'false' />
+     <script src = 'nui/source/Hyper_S.lua' type = 'server'/>
+
+     <!-- Interface -->
+
+     <file src = 'nui/interface/loading.png' cache = 'false' />
+
+     <!-- Exports -->
+
+     <export function = 'sendRequestAPI' type = 'server' />
+     <export function = 'closeQrcode' type = 'server' />
+     <export function = 'getRequestAPI' type = 'server' />
+     <export function = 'getPaymentID' type = 'server' />
+     <export function = 'isQrcodeOpen' type = 'client' />
+     <export function = 'closedx' type = 'client' />
+
+     <!-- Versão -->
+
+     <min_mta_version client = '1.5.4-9.11342' server = '1.5.4-9.11342'/>
+
+</meta>
