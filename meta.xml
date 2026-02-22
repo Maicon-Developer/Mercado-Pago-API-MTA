@@ -19,7 +19,9 @@
      <export function = 'sendRequestAPI' type = 'server' />
      <export function = 'closeQrcode' type = 'server' />
      <export function = 'getRequestAPI' type = 'server' />
+     <export function = 'getQrCode' type = 'server' />
      <export function = 'getPaymentID' type = 'server' />
+     <export function = 'getPayment' type = 'server' />
      <export function = 'isQrcodeOpen' type = 'client' />
      <export function = 'closedx' type = 'client' />
 

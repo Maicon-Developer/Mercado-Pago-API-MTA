@@ -115,7 +115,7 @@ sendRequestAPI = function( player, infos )
                if gerais['teste:api']['debug'] then
                     outputDebugString( '[sendRequestAPI] - Resposta da API: '..resposta, 4, 166, 234, 124 )
                end
-               if not erro.success then
+               if erro ~= 0 and not erro.success then
                     closeQrcode( player )
                     return outputDebugString( '[www.hyperscripts.com.br] - Sua requisição foi mal sucedida!', 4, 201, 0, 118)
                end
@@ -146,7 +146,7 @@ getRequestAPI = function( player, infos )
                if gerais['teste:api']['debug'] then
                     outputDebugString( '[getRequestAPI] - Resposta da API: '..resposta, 4, 166, 234, 124 )
                end
-               if not error.success then
+               if error ~= 0 and not error.success then
                     closeQrcode( player )
                     return outputDebugString( '[www.hyperscripts.com.br] - Sua requisição foi mal sucedida!', 4, 201, 0, 118)
                end
@@ -156,6 +156,18 @@ getRequestAPI = function( player, infos )
                     end
                end
           end, '', false, player )
+     else
+          outputDebugString('[www.hyperscripts.com.br] - Argumentos inválidos!', 4, 114, 137, 218)
+     end
+end
+
+
+getPayment = function( player, infos, callback_infos )
+     if type( infos ) == 'table' and infos['status'] then
+          local account = getAccountName(getPlayerAccount( player ))
+          outputDebugString('[www.hyperscripts.com.br] - Pagamento aprovado!', 4, 114, 137, 218)
+          iprint( infos )
+          return 
      else
           outputDebugString('[www.hyperscripts.com.br] - Argumentos inválidos!', 4, 114, 137, 218)
      end
@@ -172,10 +184,19 @@ closeQrcode = function( player )
 end
 
 
+getQrCode = function( player )
+     local account = getAccountName(getPlayerAccount( player ))
+     if paymentAPI[ account ] and paymentAPI[ account ]['point_of_interaction'] and paymentAPI[ account ]['point_of_interaction']['transaction_data'] then
+          return paymentAPI[ account ]['point_of_interaction']['transaction_data']['qr_code']
+     end
+     return 'Gere um novo pagamento para obter o QR Code.'
+end
+
+
 getPaymentID = function( player )
      local account = getAccountName( getPlayerAccount( player ) )
      if paymentAPI[ account ] then
-          return paymentAPI[ account ]['id'], paymentAPI[ account ]['point_of_interaction']['transaction_data']['qr_code']
+          return paymentAPI[ account ]['id'], paymentAPI[ account ]['point_of_interaction']['transaction_data']['qr_code'], paymentAPI[ account ]['point_of_interaction']['transaction_data']['qr_code']
      end
      return false
 end

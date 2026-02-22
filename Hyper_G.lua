@@ -19,7 +19,7 @@ Hyper_Config = {
           ['e-mail'] = '@gmail.com', -- Coloque aqui um email valido.
           ['teste:api'] = {
                ['command'] = 'testeapi';
-               ['debug'] = true; -- Se deseja que o sistema mostre mensagens de debug no console, deixe como true.
+               ['debug'] = false; -- Se deseja que o sistema mostre mensagens de debug no console, deixe como true.
                ['send'] = {
                     resname = getResourceName( getThisResource( ) ); -- Nome do resource.
                     description = 'Descrição do pagamento.'; -- Descrição do pagamento ( irá aparecer após a compra no mercado pago )
@@ -38,19 +38,19 @@ Hyper_Config = {
                }
           };
           ['timer:payments'] = {
-               ['timer'] = 5; -- Tempo de verificação do pagamento.
+               ['timer'] = 10; -- Tempo de verificação do pagamento.
                ['format'] = 1000; -- Formato do tempo.
                ['verify'] = true -- Se deseja que o sistema verifique o pagamento automaticamente, deixe como true.
           };
           ['resoluções'] = { -- Tamanho da interface nas respectivas resoluções, adicione mais seguindo o padrão.
-               [ 480 ] = 0.7;
-               [ 576 ] = 0.8;
-               [ 600 ] = 0.9;
-               [ 720 ] = 1;
-               [ 768 ] = 1;
+               [ 480 ] = 0.43;
+               [ 576 ] = 0.5;
+               [ 600 ] = 0.53;
+               [ 720 ] = 0.8;
+               [ 768 ] = 0.7;
                [ 900 ] = 1.1;
                [ 1050 ] = 1.15;
-               [ 1080 ] = 1.2;
+               [ 1080 ] = 1;
           };
      };
 }
