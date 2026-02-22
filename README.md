@@ -38,6 +38,7 @@ A API utiliza o endpoint oficial do Mercado Pago para criação de pagamentos:
   - `getPaymentID(player)` — retorna o ID do pagamento e o código QR.
   - `closeQrcode(player)` — remove o QR Code do jogador.
   - `generateString(len)` — gera strings para idempotência de requisições.
+  - `getQrCode(player)` — Pegar o codigo do pagamento copiar e colar.
 
 ---
 
